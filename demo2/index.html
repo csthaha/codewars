@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number</title>
+</head>
+
+<body>
+    <script>
+        Number.prototype.add = function(num){
+           console.log('add 来了');
+           return this + num;
+        }
+        Number.prototype.jian = function(num){
+           console.log('jian 来了');
+           return this - num;
+        }
+        Number.prototype.multiply = function(x){
+            console.log('multiply 来了');
+            return this * x;
+        }
+        Number.prototype.chu = function(num){
+           console.log('chu 来了');
+           return this / num;
+        }
+        var numberObj = new Number(3);
+        console.log(numberObj.__proto__);
+        // console.log(numberObj.add(3));
+        // console.log(numberObj.chu(3));
+        console.log(numberObj.add(5).multiply(2));
+        console.log((3).add(5).multiply(2));   //(3) 数值简化
+
+        // console.log(3.add(5).multiply(2));
+        // 3 简单数值不是一个对象 就不能使用方法
+    </script>
+</body>
+
+</html>
